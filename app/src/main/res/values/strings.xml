@@ -1,0 +1,12 @@
+<resources >
+    <string name="app_name">UpToDate</string>
+    <string name="title_activity_list">Tweets</string>
+    <string name="title_activity_list_detail">Detail</string>
+
+    <string name="com.twitter.sdk.android.CONSUMER_KEY">qxyCcHMpfazIgnM6wPFNiFBdk</string>
+    <string name="com.twitter.sdk.android.CONSUMER_SECRET">hmljJ5CsTJ42J4h9GLupEfrQ8UgDGmYEH8eEV9LAIOAvjMKz8v</string>
+
+    <string name="tweet_search">Search</string>
+    <string name="no_tweets_string">No items to show</string>
+    <string name="other_tweets">Other tweets from the same user</string>
+</resources>
