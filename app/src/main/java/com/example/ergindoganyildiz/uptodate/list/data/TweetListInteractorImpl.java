@@ -20,7 +20,7 @@ import retrofit2.Response;
 public class TweetListInteractorImpl implements TweetListInteractor {
 
     /**
-     * Use Twitter API to searc the keyword and notify presentor with a callback.
+     * Use Twitter API to search the keyword and notify presenter with a callback.
      *
      * @param keyword
      * @param callback

@@ -38,6 +38,9 @@ public class TweetDetailInteractorImpl implements TweetDetailInteractor {
     private String consumerKey;
     private String consumerSecret;
 
+    /**
+     * Set up OkHttpClient and add an interceptor to add token.
+     */
 
     public TweetDetailInteractorImpl(){
         TwitterAuthConfig authConfig = TwitterCore.getInstance().getAuthConfig();
@@ -68,6 +71,13 @@ public class TweetDetailInteractorImpl implements TweetDetailInteractor {
         twitterService = retrofit.create(TwitterService.class);
     }
 
+    /**
+     *
+     * Use Retrofit to get token and callback to notify presenter.
+     *
+     * @param tokenCallback
+     */
+
     @Override
     public void getToken(final TokenCallback tokenCallback){
         Call<OAuth2Token> call = twitterService.postCredentials("client_credentials");
@@ -94,6 +104,15 @@ public class TweetDetailInteractorImpl implements TweetDetailInteractor {
             }
         });
     }
+
+    /**
+     *
+     * Use Retrofit to get user's tweets and callback to notify presenter.
+     *
+     * @param user_id
+     * @param count
+     * @param tweetsLoadedCallback
+     */
 
     @Override
     public void getUsersTweets(String user_id, int count, final BaseInteractor.TweetsLoadedCallback tweetsLoadedCallback) {
@@ -125,6 +144,14 @@ public class TweetDetailInteractorImpl implements TweetDetailInteractor {
         });
     }
 
+    /**
+     *
+     * Use RxJava2 to get user's follewers.
+     *
+     * @param user_id
+     * @param count
+     * @return
+     */
     @Override
     public Observable<FollwersListResponse> getFollowersList(String user_id, int count) {
         return twitterService.getFollowersList(user_id, count, true);
